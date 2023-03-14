@@ -8,5 +8,8 @@
   },
   "bugs": {
     "url": "https://github.com/nabla-studio/osmosis-outposts-assetlists/issues"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5"
   }
 }
