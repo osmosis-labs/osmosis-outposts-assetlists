@@ -1,18 +1,57 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@chain-registry/client': ^1.8.0
+  '@chain-registry/types': ^0.14.0
+  '@chain-registry/utils': ^1.7.0
   '@types/node': ^18.15.3
+  chain-registry: ^1.9.0
   ts-node: ^10.9.1
   typescript: ^4.9.5
 
 dependencies:
+  '@chain-registry/client': 1.8.0
+  '@chain-registry/utils': 1.7.0
+  chain-registry: 1.9.0
   ts-node: 10.9.1_cbfmry4sbbh4vatmdrsmatfg5a
 
 devDependencies:
+  '@chain-registry/types': 0.14.0
   '@types/node': 18.15.3
   typescript: 4.9.5
 
 packages:
+
+  /@babel/runtime/7.21.0:
+    resolution: {integrity: sha512-xwII0//EObnq89Ji5AKYQaRYiW/nZ3llSv29d49IuxPhKbtJoLP+9QUUZ4nVragQVtaVGeZrpB+ZtG/Pdy/POw==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      regenerator-runtime: 0.13.11
+
+  /@chain-registry/client/1.8.0:
+    resolution: {integrity: sha512-KvndLt+LLYU6f4cc7Sdd90L600SeATmqkLlR2QPmIjoFCXZhPIq7mlrdCqWzAkY8cIEfUYA8VOhhY9bPw7KqOw==}
+    dependencies:
+      '@babel/runtime': 7.21.0
+      '@chain-registry/types': 0.14.0
+      '@chain-registry/utils': 1.7.0
+      bfs-path: 1.0.2
+      cross-fetch: 3.1.5
+    transitivePeerDependencies:
+      - encoding
+    dev: false
+
+  /@chain-registry/types/0.14.0:
+    resolution: {integrity: sha512-TlIqc3CijT734no7RiYBfUvCG2fory0blwrBcK4XTYOCi2vANsxfDdiPLFQcaSETYDd14DdjhrdXwMocEeOnLQ==}
+    dependencies:
+      '@babel/runtime': 7.21.0
+
+  /@chain-registry/utils/1.7.0:
+    resolution: {integrity: sha512-l8MfDYsvwgLot4ra2rAKAzjzLq48TFIk7H+K2yCFFLxYUR8ufZfOZYRs8OceJTEbmCNMEryQVaz2428BPC2ZwA==}
+    dependencies:
+      '@babel/runtime': 7.21.0
+      '@chain-registry/types': 0.14.0
+      sha.js: 2.4.11
+    dev: false
 
   /@cspotcode/source-map-support/0.8.1:
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -71,8 +110,27 @@ packages:
     resolution: {integrity: sha512-58S9QDqG0Xx27YwPSt9fJxivjYl432YCwfDMfZ+71RAqUrZef7LrKQZ3LHLOwCS4FLNBplP533Zx895SeOCHvA==}
     dev: false
 
+  /bfs-path/1.0.2:
+    resolution: {integrity: sha512-KTKx2JJtAAAT7C/rJYDXXWA2VLPycAS4kwFktKsxUo0hj4UTtw/Gm5PJuY7Uf3xSlIQNo7HRCSWei2ivncVwbQ==}
+    dev: false
+
+  /chain-registry/1.9.0:
+    resolution: {integrity: sha512-OIOcR/5wnhcOmsXtLlR7GCPoOhtD/gdYEYCod356+l8F6TAyphH6oVb7CzJhtUvNJK9RxH4U/S2xfELuk8ae0A==}
+    dependencies:
+      '@babel/runtime': 7.21.0
+      '@chain-registry/types': 0.14.0
+    dev: false
+
   /create-require/1.1.1:
     resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==}
+    dev: false
+
+  /cross-fetch/3.1.5:
+    resolution: {integrity: sha512-lvb1SBsI0Z7GDwmuid+mU3kWVBwTVUbe7S0H52yaaAdQOXq2YktTCZdlAcNKFzE6QtRz0snpw9bNiPeOIkkQvw==}
+    dependencies:
+      node-fetch: 2.6.7
+    transitivePeerDependencies:
+      - encoding
     dev: false
 
   /diff/4.0.2:
@@ -80,8 +138,43 @@ packages:
     engines: {node: '>=0.3.1'}
     dev: false
 
+  /inherits/2.0.4:
+    resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
+    dev: false
+
   /make-error/1.3.6:
     resolution: {integrity: sha512-s8UhlNe7vPKomQhC1qFelMokr/Sc3AgNbso3n74mVPA5LTZwkB9NlXf4XPamLxJE8h0gh73rM94xvwRT2CVInw==}
+    dev: false
+
+  /node-fetch/2.6.7:
+    resolution: {integrity: sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==}
+    engines: {node: 4.x || >=6.0.0}
+    peerDependencies:
+      encoding: ^0.1.0
+    peerDependenciesMeta:
+      encoding:
+        optional: true
+    dependencies:
+      whatwg-url: 5.0.0
+    dev: false
+
+  /regenerator-runtime/0.13.11:
+    resolution: {integrity: sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==}
+
+  /safe-buffer/5.2.1:
+    resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==}
+    dev: false
+
+  /sha.js/2.4.11:
+    resolution: {integrity: sha512-QMEp5B7cftE7APOjk5Y6xgrbWu+WkLVQwk8JNjZ8nKRciZaByEW6MubieAiToS7+dwvrjGhH8jRXz3MVd0AYqQ==}
+    hasBin: true
+    dependencies:
+      inherits: 2.0.4
+      safe-buffer: 5.2.1
+    dev: false
+
+  /tr46/0.0.3:
+    resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
     dev: false
 
   /ts-node/10.9.1_cbfmry4sbbh4vatmdrsmatfg5a:
@@ -122,6 +215,17 @@ packages:
 
   /v8-compile-cache-lib/3.0.1:
     resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}
+    dev: false
+
+  /webidl-conversions/3.0.1:
+    resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
+    dev: false
+
+  /whatwg-url/5.0.0:
+    resolution: {integrity: sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==}
+    dependencies:
+      tr46: 0.0.3
+      webidl-conversions: 3.0.1
     dev: false
 
   /yn/3.1.1:
