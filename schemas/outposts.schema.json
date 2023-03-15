@@ -1,0 +1,54 @@
+{
+	"$schema": "https://json-schema.org/draft-07/schema",
+	"type": "object",
+	"title": "Osmosis Outposts List",
+	"description": "Osmosis Outposts List is a basic list of assets, in order to generate a list of outposts configurations.",
+	"required": ["outposts"],
+	"properties": {
+		"outposts": {
+			"type": "array",
+			"default": [],
+			"title": "An array of Osmosis Outposts configurations",
+			"items": {
+				"type": "object",
+				"default": {},
+				"title": "An Osmosis Outposts configuration",
+				"required": ["chain_name", "assets"],
+				"properties": {
+					"chain_name": {
+						"type": "string",
+						"default": "",
+						"title": "The chain name of the outpost",
+						"description": "Chain name as used in the Cosmos Chain Registry"
+					},
+					"assets": {
+						"type": "array",
+						"default": [],
+						"title": "Outpost assets",
+						"description": "The list of assets to be listed in the outpost",
+						"items": {
+							"type": "object",
+							"default": {},
+							"title": "Outpost asset configuration",
+							"required": ["chain_name", "base_denom"],
+							"properties": {
+								"chain_name": {
+									"type": "string",
+									"default": "",
+									"title": "The chain name of the asset's native chain",
+									"description": "Chain name as used in the Cosmos Chain Registry"
+								},
+								"base_denom": {
+									"type": "string",
+									"default": "",
+									"title": "The native base denomination of the asset",
+									"description": "Base denomination as used for the asset in the Cosmos Chain Registry"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
