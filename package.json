@@ -3,7 +3,8 @@
 	"version": "1.0.0",
 	"author": "nabla <tech@nabla.studio>",
 	"scripts": {
-		"lint": "eslint . --ext .ts"
+		"lint": "eslint . --ext .ts",
+		"lint-and-fix": "eslint . --ext .ts --fix"
 	},
 	"repository": {
 		"type": "git",
