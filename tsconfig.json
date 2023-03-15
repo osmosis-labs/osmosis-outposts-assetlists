@@ -8,6 +8,7 @@
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
 		"useDefineForClassFields": true,
+		"esModuleInterop": true,
 		"noImplicitOverride": true,
 		"importHelpers": true,
 		"target": "es2015",

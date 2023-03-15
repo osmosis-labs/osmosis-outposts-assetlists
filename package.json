@@ -2,7 +2,9 @@
 	"name": "@nabla-studio/osmosis-outposts-assetlists",
 	"version": "1.0.0",
 	"author": "nabla <tech@nabla.studio>",
+	"type": "module",
 	"scripts": {
+		"generate": "ts-node-esm ./scripts/generate.ts",
 		"lint": "eslint . --ext .ts",
 		"lint-and-fix": "eslint . --ext .ts --fix"
 	},
