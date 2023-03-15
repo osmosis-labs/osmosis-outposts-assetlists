@@ -1,0 +1,14 @@
+{
+	"$schema": "../schemas/outposts.schema.json",
+	"outposts": [
+		{
+			"chain_name": "juno",
+			"assets": [
+				{
+					"chain_name": "cosmoshub",
+					"base_denom": "uatom"
+				}
+			]
+		}
+	]
+}
