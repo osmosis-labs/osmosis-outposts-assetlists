@@ -1,14 +1,19 @@
-import { readAssetList, readChain, assetListCache, chainCache } from './cache';
-import { OutpostConfig } from './types';
-import Ajv from 'ajv';
+import {
+	readAssetList,
+	readChain,
+	assetListCache,
+	chainCache,
+} from './cache.js';
+import { OutpostConfig } from './types.js';
+import Ajv, { Schema } from 'ajv';
 import { getAssetLists } from '@chain-registry/utils';
 import { ibc } from 'chain-registry';
-import { createAssetListDir, readJson } from './utils';
+import { createAssetListDir, readJson } from './utils.js';
 import { AssetList } from '@chain-registry/types';
 
-const ajv = new Ajv();
+const ajv = new Ajv.default();
 
-const outpostsConfigSchema = readJson('schemas/outposts.schema.json');
+const outpostsConfigSchema = readJson<Schema>('schemas/outposts.schema.json');
 
 const outpostsConfig = readJson<OutpostConfig>('configs/outposts.json');
 

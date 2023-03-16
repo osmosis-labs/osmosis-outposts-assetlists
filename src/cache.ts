@@ -12,7 +12,7 @@ export const readAssetList = (chainName: string): AssetList => {
 		assetListCache.set(chainName, assetList);
 	}
 
-	return assetListCache.get(chainName);
+	return assetListCache.get(chainName)!;
 };
 
 export const readChain = (chainName: string): Chain => {
@@ -24,5 +24,5 @@ export const readChain = (chainName: string): Chain => {
 		chainCache.set(chainName, chain);
 	}
 
-	return chainCache.get(chainName);
+	return chainCache.get(chainName)!;
 };
