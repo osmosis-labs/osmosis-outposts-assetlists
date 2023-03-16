@@ -11,6 +11,10 @@
 				{
 					"chain_name": "juno",
 					"base_denom": "ujuno"
+				},
+				{
+					"chain_name": "osmosis",
+					"base_denom": "uosmo"
 				}
 			]
 		}
