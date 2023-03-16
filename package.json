@@ -6,6 +6,7 @@
 	"scripts": {
 		"build": "rm -rf dist && tsc",
 		"generate": "npm run build && node ./dist/generate.js",
+		"validate": "npm run build && node ./dist/validate.js",
 		"lint": "eslint . --ext .ts",
 		"lint-and-fix": "eslint . --ext .ts --fix"
 	},
