@@ -4,25 +4,16 @@ import {
 	assetListCache,
 	chainCache,
 } from './cache.js';
-import { OutpostConfig } from './types.js';
-import Ajv, { Schema } from 'ajv';
 import { getAssetLists } from '@chain-registry/utils';
 import { ibc } from 'chain-registry';
-import { createAssetListDir, readJson, writeAssetLists } from './utils.js';
+import {
+	createAssetListDir,
+	writeAssetLists,
+	validateOutpostConfig,
+} from './utils.js';
 import { Asset, AssetList } from '@chain-registry/types';
 
-const ajv = new Ajv.default();
-
-const outpostsConfigSchema = readJson<Schema>('schemas/outposts.schema.json');
-
-const outpostsConfig = readJson<OutpostConfig>('configs/outposts.json');
-
-/**
- * Check if the outpost config is valid by using his schema definition
- */
-if (!ajv.validate(outpostsConfigSchema, outpostsConfig)) {
-	throw new Error('Invalid outposts config, check outposts.schema.json');
-}
+const outpostsConfig = validateOutpostConfig();
 
 /**
  * Iterate through the outpost config and create the asset list configs
