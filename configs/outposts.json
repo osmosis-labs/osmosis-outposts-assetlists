@@ -9,8 +9,7 @@
 					"base_denom": "uatom"
 				},
 				{
-					"chain_name": "juno",
-					"base_denom": "ujuno"
+					"chain_name": "juno"
 				}
 			]
 		}
