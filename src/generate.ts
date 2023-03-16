@@ -1,9 +1,10 @@
+import { readAssetList, readChain, assetListCache, chainCache } from './cache';
 import { OutpostConfig } from './types';
 import Ajv from 'ajv';
 import { getAssetLists } from '@chain-registry/utils';
 import { ibc } from 'chain-registry';
-import { readAssetList, readChain, assetListCache, chainCache } from './cache';
 import { createAssetListDir, readJson } from './utils';
+import { AssetList } from '@chain-registry/types';
 
 const ajv = new Ajv();
 
@@ -23,17 +24,18 @@ if (!ajv.validate(outpostsConfigSchema, outpostsConfig)) {
  */
 outpostsConfig.outposts.forEach(outpost => {
 	const chain = readChain(outpost.chain_name);
+	const filteredAssetLists: AssetList[] = [];
 
 	outpost.assets.forEach(asset => {
-		readAssetList(asset.chain_name);
+		const assetList = readAssetList(asset.chain_name);
+
+		filteredAssetLists.push(assetList);
 	});
 
-	readAssetList(outpost.chain_name);
-
-	/* console.log(
-		getAssetLists(chain.chain_name, ibc, [assetListAtom])[0].assets[0]
+	console.log(
+		getAssetLists(chain.chain_name, ibc, filteredAssetLists)[0].assets[0]
 			.denom_units,
-	); */
+	);
 
 	/**
 	 * If all the previous step are done we can create the outpost assetlist dir
