@@ -1,23 +1,16 @@
 {
-	"compileOnSave": false,
-	"compilerOptions": {
-		"rootDir": "src/",
-		"outDir": "dist/",
-		"sourceMap": true,
-		"declaration": false,
-		"moduleResolution": "node",
-		"emitDecoratorMetadata": true,
-		"experimentalDecorators": true,
-		"useDefineForClassFields": true,
+  "compilerOptions": {
+		"module": "NodeNext",
+		"moduleResolution": "nodenext",
+		"target": "ES2020",
+		"outDir": "dist",
+		"rootDir": "src",
 		"esModuleInterop": true,
 		"noImplicitOverride": true,
 		"importHelpers": true,
-		"target": "es2015",
-		"module": "esnext",
-		"lib": ["es2017"],
 		"skipLibCheck": true,
 		"skipDefaultLibCheck": true,
-		"baseUrl": "src/"
 	},
-	"exclude": ["node_modules", "tmp"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }

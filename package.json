@@ -4,7 +4,8 @@
 	"author": "nabla <tech@nabla.studio>",
 	"type": "module",
 	"scripts": {
-		"generate": "ts-node-esm ./scripts/generate.ts",
+		"build": "rm -rf dist && tsc",
+		"generate": "npm run build && node ./dist/generate.js",
 		"lint": "eslint . --ext .ts",
 		"lint-and-fix": "eslint . --ext .ts --fix"
 	},
