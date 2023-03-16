@@ -1,57 +1,21 @@
-import { Chain, AssetList } from '@chain-registry/types';
-import { readFileSync, existsSync, mkdirSync } from 'fs';
 import { OutpostConfig } from './types';
 import Ajv from 'ajv';
 import { getAssetLists } from '@chain-registry/utils';
 import { ibc } from 'chain-registry';
+import { readAssetList, readChain, assetListCache, chainCache } from './cache';
+import { createAssetListDir, readJson } from './utils';
 
 const ajv = new Ajv();
 
-const outpostsConfigSchema = JSON.parse(
-	readFileSync('schemas/outposts.schema.json', 'utf-8'),
-);
+const outpostsConfigSchema = readJson('schemas/outposts.schema.json');
 
-const outpostsConfig: OutpostConfig = JSON.parse(
-	readFileSync('configs/outposts.json', 'utf-8'),
-);
+const outpostsConfig = readJson<OutpostConfig>('configs/outposts.json');
 
 /**
  * Check if the outpost config is valid by using his schema definition
  */
 if (!ajv.validate(outpostsConfigSchema, outpostsConfig)) {
 	throw new Error('Invalid outposts config, check outposts.schema.json');
-}
-
-const assetListCache = new Map<string, AssetList>();
-const chainCache = new Map<string, Chain>();
-
-function readAssetList(chainName: string): AssetList {
-	if (!assetListCache.has(chainName)) {
-		const assetList: AssetList = JSON.parse(
-			readFileSync(`chain-registry/${chainName}/assetlist.json`, 'utf-8'),
-		);
-		assetListCache.set(chainName, assetList);
-	}
-
-	return assetListCache.get(chainName);
-}
-
-function readChain(chainName: string): Chain {
-	if (!chainCache.has(chainName)) {
-		const chain: Chain = JSON.parse(
-			readFileSync(`chain-registry/${chainName}/chain.json`, 'utf-8'),
-		);
-
-		chainCache.set(chainName, chain);
-	}
-
-	return chainCache.get(chainName);
-}
-
-function createAssetListDir(chainId: string) {
-	if (!existsSync(`configs/${chainId}`)) {
-		mkdirSync(`configs/${chainId}`, { recursive: true });
-	}
 }
 
 /**
