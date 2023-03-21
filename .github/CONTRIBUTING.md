@@ -42,10 +42,6 @@ Provide more context by answering:
 
 - **Is it possible to reliably reproduce this issue?** If not, please try to provide details about how often the problem happens and under which conditions it normally happens.
 
-Include details about your configuration and environment:
-
-- **Which smartphone are you using?** Please, if it is possible try to provide also the os version of the used smartphone.
-
 ### Suggesting Enhancements :sparkles:
 
 This section guides you through submitting an enhancement suggestion for Osmosis Outpost Assetlist, including completely new features and minor improvements to existing functionality. Following these guidelines helps maintainers and the community understand your suggestion :pencil: and find related suggestions :mag_right:.
@@ -65,10 +61,6 @@ You have to explain the suggestion you want to propose and include additional de
 - **Include screenshots and animated GIFs** which help you demonstrate the steps or point out the part of Osmosis Outpost Assetlist which the suggestion is related to.
 - **Explain why this enhancement would be useful** to most Osmosis Outpost Assetlist users.
 - **List, if there exist, some other Mobile Wallet or similar services where this enhancement exists.**
-
-Include details about your configuration and environment:
-
-- **Which smartphone are you using?** Please, if it is possible try to provide the os version of the used smartphone.
 
 ### How to provide solutions :construction::heavy_plus_sign:
 
