@@ -3,6 +3,8 @@ import {
 	readChain,
 	assetListCache,
 	chainCache,
+	ibcConfigs,
+	readIbcConfig,
 } from './cache.js';
 import { getAssetLists } from '@chain-registry/utils';
 import { ibc } from 'chain-registry';
@@ -19,10 +21,10 @@ const outpostsConfig = validateOutpostConfig();
  * Iterate through the outpost config and create the asset list configs
  */
 outpostsConfig.outposts.forEach(outpost => {
-	const chain = readChain(outpost.chain_name);
+	const chain = readChain(outpost.chain_name, outpost.testnet);
 	const filteredAssetLists: AssetList[] = [];
 
-	const outpostAssetLists = readAssetList(outpost.chain_name);
+	const outpostAssetLists = readAssetList(outpost.chain_name, outpost.testnet);
 
 	const outpostBaseDenoms = outpost.assets
 		.filter(asset => asset.chain_name === outpostAssetLists.chain_name)
@@ -41,7 +43,7 @@ outpostsConfig.outposts.forEach(outpost => {
 	 * so we can find all the IBC assets and Native assets
 	 */
 	outpostAssetChains.forEach(chainName => {
-		const assetList = readAssetList(chainName);
+		const assetList = readAssetList(chainName, outpost.testnet);
 		const baseDenoms = outpost.assets
 			.filter(asset => asset.chain_name === chainName)
 			.map(asset => asset.base_denom);
@@ -54,11 +56,15 @@ outpostsConfig.outposts.forEach(outpost => {
 			...assetList,
 			assets,
 		});
+
+		if (outpost.testnet && outpost.chain_name !== chainName) {
+			readIbcConfig(outpost.chain_name, chainName, outpost.testnet);
+		}
 	});
 
 	const outpostIBCAssetList: AssetList[] = getAssetLists(
 		chain.chain_name,
-		ibc,
+		ibcConfigs,
 		filteredAssetLists,
 	);
 

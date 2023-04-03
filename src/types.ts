@@ -6,6 +6,7 @@ export interface OutpostAsset {
 export interface Outpost {
 	chain_name: string;
 	assets: OutpostAsset[];
+	testnet?: boolean;
 }
 
 export interface OutpostConfig {
