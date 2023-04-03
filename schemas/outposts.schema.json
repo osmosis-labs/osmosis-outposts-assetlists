@@ -46,6 +46,12 @@
 								}
 							}
 						}
+					},
+					"testnet": {
+						"type": "boolean",
+						"default": false,
+						"title": "The testnet Schema",
+						"examples": [true]
 					}
 				}
 			}

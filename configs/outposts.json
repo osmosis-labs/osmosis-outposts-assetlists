@@ -17,6 +17,20 @@
 					"base_denom": "uosmo"
 				}
 			]
+		},
+		{
+			"chain_name": "junotestnet",
+			"testnet": true,
+			"assets": [
+				{
+					"chain_name": "junotestnet",
+					"base_denom": "ujunox"
+				},
+				{
+					"chain_name": "osmosistestnet",
+					"base_denom": "uosmo"
+				}
+			]
 		}
 	]
 }
