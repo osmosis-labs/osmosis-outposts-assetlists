@@ -11,16 +11,29 @@ export const readIbcConfig = (
 	chain2Name: string,
 	testnet = false,
 ): IBCInfo[] => {
-	const ibcConfig: IBCInfo = JSON.parse(
-		readFileSync(
+	let data: string | undefined = undefined;
+
+	try {
+		data = readFileSync(
 			`chain-registry/${
 				testnet ? 'testnets/_IBC' : '_IBC'
 			}/${chain1Name}-${chain2Name}.json`,
 			'utf-8',
-		),
-	);
+		);
+	} catch (err) {
+		data = readFileSync(
+			`chain-registry/${
+				testnet ? 'testnets/_IBC' : '_IBC'
+			}/${chain2Name}-${chain1Name}.json`,
+			'utf-8',
+		);
+	}
 
-	ibcConfigs.push(ibcConfig);
+	if (data) {
+		const ibcConfig: IBCInfo = JSON.parse(data);
+
+		ibcConfigs.push(ibcConfig);
+	}
 
 	return ibcConfigs;
 };
