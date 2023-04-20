@@ -9,14 +9,6 @@
 					"base_denom": "ujuno"
 				},
 				{
-					"chain_name": "cosmoshub",
-					"base_denom": "uatom"
-				},
-				{
-					"chain_name": "stride",
-					"base_denom": "ustrd"
-				},
-				{
 					"chain_name": "osmosis",
 					"base_denom": "uosmo"
 				}
@@ -28,14 +20,6 @@
 				{
 					"chain_name": "osmosis",
 					"base_denom": "uosmo"
-				},
-				{
-					"chain_name": "cosmoshub",
-					"base_denom": "uatom"
-				},
-				{
-					"chain_name": "stride",
-					"base_denom": "ustrd"
 				},
 				{
 					"chain_name": "juno",
