@@ -2,6 +2,27 @@
 	"$schema": "../schemas/outposts.schema.json",
 	"outposts": [
 		{
+			"chain_name": "stargaze",
+			"assets": [
+				{
+					"chain_name": "stargaze",
+					"base_denom": "ustars"
+				},
+				{
+					"chain_name": "juno",
+					"base_denom": "ujuno"
+				},
+				{
+					"chain_name": "cosmoshub",
+					"base_denom": "uatom"
+				},
+				{
+					"chain_name": "osmosis",
+					"base_denom": "uosmo"
+				}
+			]
+		},
+		{
 			"chain_name": "juno",
 			"assets": [
 				{
@@ -40,6 +61,10 @@
 				{
 					"chain_name": "juno",
 					"base_denom": "ujuno"
+				},
+				{
+					"chain_name": "stargaze",
+					"base_denom": "ustars"
 				}
 			]
 		},
