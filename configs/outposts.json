@@ -13,8 +13,8 @@
 					"base_denom": "ujuno"
 				},
 				{
-					"chain_name": "cosmoshub",
-					"base_denom": "uatom"
+					"chain_name": "stride",
+					"base_denom": "stuatom"
 				},
 				{
 					"chain_name": "osmosis",
