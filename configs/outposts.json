@@ -2,6 +2,27 @@
 	"$schema": "../schemas/outposts.schema.json",
 	"outposts": [
 		{
+			"chain_name": "axelar",
+			"assets": [
+				{
+					"chain_name": "axelar",
+					"base_denom": "uaxl"
+				},
+				{
+					"chain_name": "juno",
+					"base_denom": "ujuno"
+				},
+				{
+					"chain_name": "cosmoshub",
+					"base_denom": "uatom"
+				},
+				{
+					"chain_name": "osmosis",
+					"base_denom": "uosmo"
+				}
+			]
+		},
+		{
 			"chain_name": "akash",
 			"assets": [
 				{
@@ -90,6 +111,10 @@
 				{
 					"chain_name": "akash",
 					"base_denom": "uakt"
+				},
+				{
+					"chain_name": "axelar",
+					"base_denom": "uaxl"
 				}
 			]
 		},
