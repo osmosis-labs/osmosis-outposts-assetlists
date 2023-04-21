@@ -72,6 +72,10 @@
 					"base_denom": "ujuno"
 				},
 				{
+					"chain_name": "juno",
+					"base_denom": "cw20:juno1mkw83sv6c7sjdvsaplrzc8yaes9l42p4mhy0ssuxjnyzl87c9eps7ce3m9"
+				},
+				{
 					"chain_name": "cosmoshub",
 					"base_denom": "uatom"
 				},
@@ -103,6 +107,10 @@
 				{
 					"chain_name": "juno",
 					"base_denom": "ujuno"
+				},
+				{
+					"chain_name": "juno",
+					"base_denom": "cw20:juno1mkw83sv6c7sjdvsaplrzc8yaes9l42p4mhy0ssuxjnyzl87c9eps7ce3m9"
 				},
 				{
 					"chain_name": "stargaze",
