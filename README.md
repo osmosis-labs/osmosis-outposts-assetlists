@@ -26,6 +26,23 @@ As per the Omosis assetlists, one prerequisite to adding an asset here is
 complete registration of the asset and its originating chain to the Cosmos
 Chain Registry, so make sure that's done first.
 
+## ‼️ Important consideration
+
+The data provided through this assetlist are realized to be consumed by an
+`outpost`. In this scenario, it is important to make sure that the data enable
+the `outpost` to work correctly.
+
+For this reason, according to how an outpost is designed, you need to ensure
+that all the tokens you are listing, are able to be swapped on osmosis and
+recevied from and sent to the `outpost chain`.
+To do this, please, you need to list only the tokens who can reach your
+blockchain.
+
+> E.g., if you are constructing the `Juno outpost` and `Stride blockchain` does
+> not have configured the Packet Forward Middleware (PFM), you cannot list stride
+> on your outpost, since you cannot receive your stride tokens back to the `Juno`
+> `blockchain` automatically.
+
 ## 📚 How to Add Assets
 
 To add assets or asset lists, you need to edit the configuration file at
